@@ -2,7 +2,7 @@ import React from "react";
 
 export const MiniCard = ({ title, icon, number, footerNum }) => {
   return (
-    <div className="bg-[#1a1a1a] py-5 px-5 rounded-lg w-[50%]">
+    <div className="bg-[#1a1a1a] py-3 px-4 rounded-lg w-[50%]">
       <div className="flex items-start justify-between">
         <h1 className="text-[#f5f5f5] text-lg font-semibold tracking-wide">
           {title}
@@ -10,17 +10,16 @@ export const MiniCard = ({ title, icon, number, footerNum }) => {
         <button
           className={`${
             title === "Total Earnings" ? "bg-[#02ca3a]" : "bg-[#f6b100]"
-          } p-3 rounded-lg text-[#f5f5f5] text-2xl`}
+          } p-2 rounded-md text-[#f5f5f5] text-lg`}
         >
           {icon}
         </button>
       </div>
       <div>
-        <h1 className="text-[#f5f5f5] text-4xl font-bold mt-5">{number}</h1>
-        <h1 className="text-[#f5f5f5] text-lg mt-2">
-          {" "}
-          <span className="text-[#02ca3a]"> {footerNum}%</span> than yesterday
-        </h1>
+        <h1 className="text-[#f5f5f5] text-3xl font-bold mt-3">{number}</h1>
+        <h3 className="text-[#f5f5f5] text-sm mt-2">
+          <span className="text-[#02ca3a]"> {footerNum}%</span> than yesterday.
+        </h3>
       </div>
     </div>
   );

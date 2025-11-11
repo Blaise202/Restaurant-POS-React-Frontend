@@ -11,18 +11,18 @@ export const Greetings = () => {
 
   const formatDate = (date) => {
     const months = [
-      "January",
-      "February",
+      "Jan",
+      "Feb",
       "Match",
       "April",
       "May",
       "June",
       "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
+      "Aug",
+      "Sept",
+      "Oct",
+      "Nov",
+      "Dec",
     ];
     return `${months[date.getMonth()]}, ${String(date.getDate()).padStart(
       2,
@@ -47,7 +47,7 @@ export const Greetings = () => {
         </p>
       </div>
       <div>
-        <h1 className=" text-[#f5f5f5] text-3xl font-bold tracking-wide w-[130px]">
+        <h1 className=" text-[#f5f5f5] text-2xl font-bold tracking-wide w-[130px]">
           {formatTime(dateTime)}
         </h1>
         <p className="text-[#ababab] text-sm">{formatDate(dateTime)}</p>

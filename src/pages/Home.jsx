@@ -4,6 +4,7 @@ import Greetings from "../components/home/Greetings";
 import MiniCard from "../components/home/MiniCard";
 import { BsCashCoin } from "react-icons/bs";
 import { GrInProgress } from "react-icons/gr";
+import RecentOrders from "../components/home/RecentOrders";
 
 export function Home() {
   return (
@@ -12,7 +13,7 @@ export function Home() {
         {/* left div */}
         <div className="flex-[4]">
           <Greetings />
-          <div className="flex items-center w-full gap-3 px-8 mt-8">
+          <div className="flex items-center w-full gap-3 px-4 mt-3">
             <MiniCard
               title="Total Earnings"
               icon={<BsCashCoin />}
@@ -26,6 +27,7 @@ export function Home() {
               footerNum={3.6}
             />
           </div>
+          <RecentOrders />
         </div>
         {/* right div */}
         <div className="flex-[2] bg-[#499586]"></div>
