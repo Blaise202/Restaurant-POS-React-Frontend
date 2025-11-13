@@ -3,38 +3,53 @@ import { FaHome } from "react-icons/fa";
 import { MdOutlineReorder, MdTableBar } from "react-icons/md";
 import { CiCircleMore } from "react-icons/ci";
 import { BiSolidDish } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 export function Bottom() {
   return (
     <div className="fixed bottom-0 left-0 w-full right-0 bg-[#262626] p-2 h-12  flex justify-around">
-      <button className="flex justify-center items-center text-[#ababab] bg-[#343434] w-[200px] rounded-[20px]">
+      <Link
+        to="/"
+        className=" flex justify-center items-center text-[#ababab] bg-[#343434] w-[200px] rounded-[20px]"
+      >
+        {/* <button> */}
         <FaHome
           className="inline mr-4"
           size={20}
         />
         <p>Home</p>
-      </button>
-      <button className="flex justify-center items-center text-[#ababab] w-[200px] rounded-[20px]">
+        {/* </button> */}
+      </Link>
+      <Link
+        to="/orders"
+        className="flex justify-center items-center text-[#ababab] w-[200px] rounded-[20px]"
+      >
         <MdOutlineReorder
           className="inline mr-4"
           size={20}
         />
         <p>Orders</p>
-      </button>
-      <button className="flex justify-center items-center text-[#ababab] w-[200px]">
+      </Link>
+      <Link
+        to="/tables"
+        className="flex justify-center items-center text-[#ababab] w-[200px]"
+      >
         <MdTableBar
           className="inline mr-4"
           size={20}
         />
         <p>Tables</p>
-      </button>
-      <button className="flex justify-center items-center text-[#ababab] w-[200px]">
+      </Link>
+      <Link
+        to="/more"
+        className="flex justify-center items-center text-[#ababab] w-[200px]"
+      >
         <CiCircleMore
           className="inline mr-4"
           size={20}
         />
         <p>More</p>
-      </button>
+      </Link>
       <button className="bg-[#F6B100] text-[#f5f5f5] rounded-full p-2 items-center absolute bottom-3">
         <BiSolidDish size={25} />
       </button>
