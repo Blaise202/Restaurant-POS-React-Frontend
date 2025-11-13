@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Bottom from "../components/include/Bottom";
 import OrderCard from "../components/orders/OrderCard";
 import { orders } from "../constants";
 import BackButton from "../components/include/BackButton";
 export function Orders() {
+  const [status, setStatus] = useState("all");
+
   return (
     <section className="bg-[#1f1f1f] h-[calc(100vh-4.5rem)] no-scrollbar">
       <div className="flex items-center justify-between px-10 py-4">
@@ -14,16 +16,36 @@ export function Orders() {
           </h1>
         </div>
         <div className="flex items-center justify-around gap-4">
-          <button className="text-[#ababab] text-md bg-[#383838] rounded-lg px-5 py-2 font-semibold">
+          <button
+            onClick={() => setStatus("all")}
+            className={`text-[#ababab] text-md ${
+              status == "all" ? "bg-[#383838]" : ""
+            } rounded-lg px-5 py-2 font-semibold`}
+          >
             All
           </button>
-          <button className="text-[#ababab] text-md rounded-lg px-5 py-2 font-semibold">
-            In Pogress
+          <button
+            onClick={() => setStatus("pending")}
+            className={`text-[#ababab] text-md ${
+              status == "pending" ? "bg-[#383838]" : ""
+            } rounded-lg px-5 py-2 font-semibold`}
+          >
+            Pending
           </button>
-          <button className="text-[#ababab] text-md rounded-lg px-5 py-2 font-semibold">
+          <button
+            onClick={() => setStatus("ready")}
+            className={`text-[#ababab] text-md ${
+              status == "ready" ? "bg-[#383838]" : ""
+            } rounded-lg px-5 py-2 font-semibold`}
+          >
             Ready
           </button>
-          <button className="text-[#ababab] text-md rounded-lg px-5 py-2 font-semibold">
+          <button
+            onClick={() => setStatus("completed")}
+            className={`text-[#ababab] text-md ${
+              status == "completed" ? "bg-[#383838]" : ""
+            } rounded-lg px-5 py-2 font-semibold`}
+          >
             Completed
           </button>
         </div>
