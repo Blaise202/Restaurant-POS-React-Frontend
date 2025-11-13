@@ -37,9 +37,9 @@ export const Greetings = () => {
   };
 
   return (
-    <div className="flex justify-between items-center px-8 mt-5">
+    <div className="flex justify-between items-center px-8 mt-2">
       <div>
-        <h1 className="text-[#f5f5f5] text-2xl mb-2 text-semibold tracking-wide">
+        <h1 className="text-[#f5f5f5] text-2xl mb-1 text-semibold tracking-wide">
           Good Morning, Blaise
         </h1>
         <p className="text-[#ababab] text-sm">

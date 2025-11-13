@@ -3,12 +3,12 @@ import { popularDishes } from "../../constants/index.js";
 
 const PopularDishes = () => {
   return (
-    <div className="mt-6 pr-6">
+    <div className="mt-2 mb-5 pr-6">
       <div className="bg-[#1a1a1a] w-100 rounded-lg">
         <div className="flex justify-between items-center px-3 py-3">
-          <h1 className="text-[#f5f5f5] font-semibold tracking-wide">
+          <h2 className="text-[#f5f5f5] font-semibold tracking-wide">
             Popular Dishes
-          </h1>
+          </h2>
           <a
             href=""
             className="text-[#025cca] text-sm font-semibold"
@@ -16,20 +16,20 @@ const PopularDishes = () => {
             View All
           </a>
         </div>
-        <div className="overflow-y-scroll h-[470px] no-scrollbar">
+        <div className="overflow-y-scroll h-[590px] no-scrollbar">
           {popularDishes.map((dish) => {
             return (
               <div
                 key={dish.id}
                 className="flex items-center gap-4 bg-[#1f1f1f] rounded-[15px] py-2 px-4 m-2 mx-3"
               >
-                <h1 className="text-[#f5f5f5] font-bold text-xl mr-3">
+                <b className="text-[#f5f5f5] text-lg mr-2">
                   {dish.id < 10 ? `0${dish.id}` : `${dish.id}`}
-                </h1>
+                </b>
                 <img
                   src={dish.image}
                   alt={dish.name}
-                  className="h-[50px] w-[50px] rounded-full"
+                  className="h-11 w-11 rounded-full mr-3"
                 />
                 <div className="">
                   <h1 className="text-[#f5f5f5] font-semibold tracking-wide">

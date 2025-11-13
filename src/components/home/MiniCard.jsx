@@ -16,8 +16,8 @@ export const MiniCard = ({ title, icon, number, footerNum }) => {
         </button>
       </div>
       <div>
-        <h1 className="text-[#f5f5f5] text-3xl font-bold mt-3">{number}</h1>
-        <h3 className="text-[#f5f5f5] text-sm mt-2">
+        <h2 className="text-[#f5f5f5] text-3xl font-semibold mt-3">{number}</h2>
+        <h3 className="text-[#f5f5f5] text-sm">
           <span className="text-[#02ca3a]"> {footerNum}%</span> than yesterday.
         </h3>
       </div>
