@@ -1,12 +1,7 @@
 import React from "react";
 import Bottom from "../components/include/Bottom";
-import Greetings from "../components/home/Greetings";
-import MiniCard from "../components/home/MiniCard";
-import { BsCashCoin } from "react-icons/bs";
-import { GrInProgress } from "react-icons/gr";
-import RecentOrders from "../components/home/RecentOrders";
-import PopularDishes from "../components/home/PopularDishes";
-
+import OrderCard from "../components/orders/OrderCard";
+import { orders } from "../constants";
 export function Orders() {
   return (
     <section className="bg-[#1f1f1f] h-[calc(100vh-4.5rem)] no-scrollbar">
@@ -28,6 +23,20 @@ export function Orders() {
             Completed
           </button>
         </div>
+      </div>
+      <div className="flex flex-wrap gap-5 px-10 py-4 overflow-y-scroll no-scrollbar h-[calc(100vh-5rem-5rem)]">
+        {orders.map((order) => {
+          return (
+            <OrderCard
+              waiter={order.waiter}
+              type={order.type}
+              table={order.table}
+              date={order.date}
+              total={order.total}
+              items={order.items}
+            />
+          );
+        })}
       </div>
       <Bottom />
     </section>
