@@ -177,3 +177,66 @@ export const orders = [
     items: 3,
   }
 ];
+
+export const tables = [
+  {
+    id: 1,
+    status: "vacant",
+    label: "Table 1",
+    abbr: "AM"
+  },
+  {
+    id: 2,
+    status: "booked",
+    label: "Table 2",
+    abbr: "BM"
+  },
+  {
+    id: 3,
+    status: "occupied",
+    label: "Table 3",
+    abbr: "CM"
+  },
+  {
+    id: 4,
+    status: "vacant",
+    label: "Table 4",
+    abbr: "DM"
+  },
+  {
+    id: 5,
+    status: "booked",
+    label: "Table 5",
+    abbr: "EM"
+  },
+  {
+    id: 6,
+    status: "occupied",
+    label: "Table 6",
+    abbr: "FM"
+  },
+  {
+    id: 7,
+    status: "vacant",
+    label: "Table 7",
+    abbr: "GM"
+  },
+  {
+    id: 8,
+    status: "booked",
+    label: "Table 8",
+    abbr: "HM"
+  },
+  {
+    id: 9,
+    status: "occupied",
+    label: "Table 9",
+    abbr: "IM"
+  },
+  {
+    id: 10,
+    status: "vacant",
+    label: "Table 10",
+    abbr: "JM"
+  }
+];
