@@ -16,6 +16,18 @@ export function Bottom() {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  const [guestCount, setGuestCount] = useState(0);
+  const increment = () => {
+    if (guestCount < 10) {
+      setGuestCount(guestCount + 1);
+    }
+  };
+  const decrement = () => {
+    if (guestCount > 1) {
+      setGuestCount(guestCount - 1);
+    }
+  };
+
   const navigate = useNavigate();
 
   return (
@@ -122,11 +134,17 @@ export function Bottom() {
             Guest
           </label>
           <div className="flex items-center justify-between bg-[#1f1f1f] px-4 py-3 rounded-lg">
-            <button className="bg-[#343434] text-white px-3 py-1 rounded-lg">
+            <button
+              onClick={decrement}
+              className="bg-[#343434] text-white px-3 py-1 rounded-lg"
+            >
               -
             </button>
-            <span className="text-white">0 Person</span>
-            <button className="bg-[#F6B100] text-white px-3 py-1 rounded-lg">
+            <span className="text-white">{guestCount} Person</span>
+            <button
+              onClick={increment}
+              className="bg-[#F6B100] text-white px-3 py-1 rounded-lg"
+            >
               +
             </button>
           </div>
