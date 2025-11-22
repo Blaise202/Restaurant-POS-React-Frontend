@@ -2,6 +2,7 @@ import React from "react";
 import Bottom from "../components/include/Bottom";
 import BackButton from "../components/include/BackButton";
 import TableCard from "../components/tables/TableCard";
+import { tables } from "../constants";
 
 export const Tables = () => {
   const [status, setStatus] = React.useState("all");
@@ -33,12 +34,12 @@ export const Tables = () => {
             Booked
           </button>
           <button
-            onClick={() => setStatus("available")}
+            onClick={() => setStatus("vacant")}
             className={`text-[#ababab] text-md ${
-              status == "available" ? "bg-[#383838]" : ""
+              status == "vacant" ? "bg-[#383838]" : ""
             } rounded-lg px-5 py-2 font-semibold`}
           >
-            Available
+            Vacant
           </button>
           <button
             onClick={() => setStatus("occupied")}
@@ -50,17 +51,19 @@ export const Tables = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap gap-6 px-10 py-4 overflow-y-scroll no-scrollbar">
-        <TableCard />
-        <TableCard />
-        <TableCard />
-        <TableCard />
-        <TableCard />
-        <TableCard />
-        <TableCard />
-        <TableCard />
-        <TableCard />
-        <TableCard />
+      <div className="flex flex-wrap gap-4 px-5 py-4 p-10 overflow-y-scroll no-scrollbar h-[calc(100vh-5rem-5rem)]">
+        {tables.map((table) => {
+          if (status === "all" || table.status === status) {
+            return (
+              <TableCard
+                key={table.id}
+                label={table.label}
+                status={table.status}
+                abbr={table.abbr}
+              />
+            );
+          }
+        })}
       </div>
       <Bottom />
     </section>

@@ -178,10 +178,11 @@ export const orders = [
   }
 ];
 
+
 export const tables = [
   {
     id: 1,
-    status: "vacant",
+    status: "booked",
     label: "Table 1",
     abbr: "AM"
   },
@@ -193,7 +194,7 @@ export const tables = [
   },
   {
     id: 3,
-    status: "occupied",
+    status: "vacant",
     label: "Table 3",
     abbr: "CM"
   },
@@ -211,7 +212,7 @@ export const tables = [
   },
   {
     id: 6,
-    status: "occupied",
+    status: "booked",
     label: "Table 6",
     abbr: "FM"
   },
@@ -223,7 +224,7 @@ export const tables = [
   },
   {
     id: 8,
-    status: "booked",
+    status: "vacant",
     label: "Table 8",
     abbr: "HM"
   },
@@ -235,8 +236,44 @@ export const tables = [
   },
   {
     id: 10,
-    status: "vacant",
+    status: "occupied",
     label: "Table 10",
     abbr: "JM"
+  },
+  {
+    id: 11,
+    status: "booked",
+    label: "Table 11",
+    abbr: "KM"
+  },
+  {
+    id: 12,
+    status: "occupied",
+    label: "Table 12",
+    abbr: "LM"
+  },
+  {
+    id: 13,
+    status: "booked",
+    label: "Table 13",
+    abbr: "MM"
+  },
+  {
+    id: 14,
+    status: "occupied",
+    label: "Table 14",
+    abbr: "NM"
+  },
+  {
+    id: 15,
+    status: "occupied",
+    label: "Table 15",
+    abbr: "OM"
+  },
+  {
+    id: 16,
+    status: "occupied",
+    label: "Table 16",
+    abbr: "PM"
   }
 ];
