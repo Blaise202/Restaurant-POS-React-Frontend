@@ -1,8 +1,12 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import OrderList from "./OrderList";
+import { useNavigate } from "react-router-dom";
 
 export const RecentOrders = () => {
+  const navigate = useNavigate();
+  const [, setActive] = React.useState("recentOrders");
+
   return (
     <div className="px-4 mt-2">
       <div className="bg-[#191919] w-full my-5 h-[350px] rounded-lg">
@@ -10,12 +14,16 @@ export const RecentOrders = () => {
           <h2 className="text-[#f5f5f5] font-semibold tracking-wide">
             Recent Orders
           </h2>
-          <a
+          <button
+            onClick={() => {
+              setActive("orders");
+              navigate("/orders");
+            }}
             href=""
             className="text-[#025cca] text-sm font-semibold"
           >
             View All
-          </a>
+          </button>
         </div>
         <div className="flex items-center gap-4 bg-[#1f1f1f] rounded-[15px] px-5 py-2 mx-8 mb-2">
           <FaSearch className="text-[#f5f5f5]" />

@@ -4,6 +4,7 @@ import { MdOutlineReorder, MdTableBar } from "react-icons/md";
 import { CiCircleMore } from "react-icons/ci";
 import { BiSolidDish } from "react-icons/bi";
 import { useLocation, useNavigate } from "react-router-dom";
+import Modal from "../include/Modal";
 
 export function Bottom() {
   // const [active, setActive] = useState();
@@ -11,6 +12,9 @@ export function Bottom() {
   const [active, setActive] = useState(
     location.pathname.replace("/", "") || "home"
   );
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   const navigate = useNavigate();
 
@@ -78,9 +82,64 @@ export function Bottom() {
         />
         <p>More</p>
       </button>
-      <button className="bg-[#F6B100] text-[#f5f5f5] rounded-full p-2 items-center absolute bottom-3">
+      <button
+        onClick={openModal}
+        className="bg-[#F6B100] text-[#f5f5f5] rounded-full p-2 items-center absolute bottom-3"
+      >
         <BiSolidDish size={25} />
       </button>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title="Create Order"
+      >
+        <div className="">
+          <label className="bloc text-[#ababab] mb-2 text-sm font-medium">
+            Customer Name
+          </label>
+          <div className="flex items-center mt-1 rounded-lg p-3 bg-[#1f1f1f] px-4">
+            <input
+              type="text"
+              placeholder="Enter Customer Name"
+              className="bg-transparent flex-1 text-white focus:outline-none"
+            />
+          </div>
+        </div>
+        <div className="my-4">
+          <label className="bloc text-[#ababab] mb-2 text-sm font-medium">
+            Customer Number
+          </label>
+          <div className="flex items-center mt-1 rounded-lg p-3 bg-[#1f1f1f] px-4">
+            <input
+              type="tel"
+              placeholder="+233-00 000 0000"
+              className="bg-transparent flex-1 text-white focus:outline-none"
+            />
+          </div>
+        </div>
+        <div className="my-4">
+          <label className="bloc text-[#ababab] mb-2 text-sm font-medium">
+            Guest
+          </label>
+          <div className="flex items-center justify-between bg-[#1f1f1f] px-4 py-3 rounded-lg">
+            <button className="bg-[#343434] text-white px-3 py-1 rounded-lg">
+              -
+            </button>
+            <span className="text-white">0 Person</span>
+            <button className="bg-[#F6B100] text-white px-3 py-1 rounded-lg">
+              +
+            </button>
+          </div>
+        </div>
+        <button
+          onClick={() => {
+            navigate("/tables");
+          }}
+          className="bg-[#b28207] text-white px-4 py-2 my-3 rounded-lg w-full hover:bg-[#d9a91c]"
+        >
+          Create Order
+        </button>
+      </Modal>
     </div>
   );
 }
