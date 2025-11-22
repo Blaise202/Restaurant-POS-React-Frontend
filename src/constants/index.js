@@ -184,96 +184,112 @@ export const tables = [
     id: 1,
     status: "booked",
     label: "Table 1",
-    abbr: "AM"
+    abbr: "AM",
+    seats: 2,
   },
   {
     id: 2,
     status: "booked",
     label: "Table 2",
-    abbr: "BM"
+    abbr: "BM",
+    seats: 5,
   },
   {
     id: 3,
     status: "vacant",
     label: "Table 3",
-    abbr: "CM"
+    abbr: "CM",
+    seats: 4,
   },
   {
     id: 4,
     status: "vacant",
     label: "Table 4",
-    abbr: "DM"
+    abbr: "DM",
+    seats: 2,
   },
   {
     id: 5,
     status: "booked",
     label: "Table 5",
-    abbr: "EM"
+    abbr: "EM",
+    seats: 6,
   },
   {
     id: 6,
     status: "booked",
     label: "Table 6",
-    abbr: "FM"
+    abbr: "FM",
+    seats: 4,
   },
   {
     id: 7,
     status: "vacant",
     label: "Table 7",
-    abbr: "GM"
+    abbr: "GM",
+    seats: 4,
   },
   {
     id: 8,
     status: "vacant",
     label: "Table 8",
-    abbr: "HM"
+    abbr: "HM",
+    seats: 4,
   },
   {
     id: 9,
     status: "occupied",
     label: "Table 9",
-    abbr: "IM"
+    abbr: "IM",
+    seats: 2,
   },
   {
     id: 10,
     status: "occupied",
     label: "Table 10",
-    abbr: "JM"
+    abbr: "JM",
+    seats: 8,
   },
   {
     id: 11,
     status: "booked",
     label: "Table 11",
-    abbr: "KM"
+    abbr: "KM",
+    seats: 4,
   },
   {
     id: 12,
     status: "occupied",
     label: "Table 12",
-    abbr: "LM"
+    abbr: "LM",
+    seats: 4,
   },
   {
     id: 13,
     status: "booked",
     label: "Table 13",
-    abbr: "MM"
+    abbr: "MM",
+    seats: 4,
   },
   {
     id: 14,
     status: "occupied",
     label: "Table 14",
-    abbr: "NM"
+    abbr: "NM",
+    seats: 4,
   },
   {
     id: 15,
     status: "occupied",
     label: "Table 15",
-    abbr: "OM"
+    abbr: "OM",
+    seats: 2,
   },
   {
     id: 16,
     status: "occupied",
     label: "Table 16",
-    abbr: "PM"
+    abbr: "PM",
+    seats: 6,
   }
 ];

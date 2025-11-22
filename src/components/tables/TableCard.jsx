@@ -1,7 +1,7 @@
 import React from "react";
 import { getRandomBG } from "../../utils";
 
-export const TableCard = ({ label, status, abbr, id }) => {
+export const TableCard = ({ label, status, abbr, id, seats }) => {
   function setColor(status) {
     switch (status) {
       case "vacant":
@@ -34,6 +34,11 @@ export const TableCard = ({ label, status, abbr, id }) => {
           >
             {abbr}
           </h1>
+        </div>
+        <div className="flex ">
+          <span className="text-[#ababab] text-sm">
+            Seats: <span className="text-[#f5f5f5]">{seats}</span>{" "}
+          </span>
         </div>
       </div>
     </>

@@ -60,6 +60,7 @@ export const Tables = () => {
                 label={table.label}
                 status={table.status}
                 abbr={table.abbr}
+                seats={table.seats}
               />
             );
           }
