@@ -348,6 +348,9 @@ export const pizzas = [
 export const alcoholicDrinks = [
   { id: 1, name: "Beer", price: 18, category: "Alcoholic Drinks" },
   { id: 2, name: "Wine", price: 37, category: "Alcoholic Drinks" },
+  { id: 3, name: "Whiskey", price: 45, category: "Alcoholic Drinks" },
+  { id: 4, name: "Vodka", price: 40, category: "Alcoholic Drinks" },
+  { id: 5, name: "Rum", price: 35, category: "Alcoholic Drinks" },
 ];
 
 export const menus = [
