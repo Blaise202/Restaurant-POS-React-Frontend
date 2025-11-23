@@ -31,7 +31,7 @@ export function Bottom() {
   const navigate = useNavigate();
 
   return (
-    <div className="fixed bottom-0 left-0 w-full right-0 bg-[#262626] p-2 h-12  flex justify-around">
+    <div className="fixed bottom-0 left-0 w-full right-0 bg-[#262626] p-2 h-12 flex justify-around">
       <button
         onClick={() => {
           setActive("home");
@@ -140,7 +140,7 @@ export function Bottom() {
             >
               -
             </button>
-            <span className="text-white">{guestCount} Person</span>
+            <span className="text-white">{guestCount} Person(s)</span>
             <button
               onClick={increment}
               className="bg-[#F6B100] text-white px-3 py-1 rounded-lg"

@@ -1,5 +1,6 @@
 import React from "react";
 import { getRandomBG } from "../../utils";
+import { useNavigate } from "react-router-dom";
 
 export const TableCard = ({ label, status, abbr, id, seats }) => {
   function setColor(status) {
@@ -14,9 +15,18 @@ export const TableCard = ({ label, status, abbr, id, seats }) => {
         return "text-gray-600 bg-[#2e2e2e]";
     }
   }
+
+  const navigate = useNavigate();
+  const goToMenu = () => {
+    if (status === "booked") return;
+    // Navigate to menu page
+    navigate(`/menu`);
+  };
+
   return (
     <>
       <div
+        onClick={goToMenu}
         key={id}
         className="w-[230px] h-fit rounded-lg bg-[#2b2b2b] hover:bg-[#383838] p-3 cursor-pointer"
       >

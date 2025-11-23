@@ -293,3 +293,70 @@ export const tables = [
     seats: 6,
   }
 ];
+
+export const salads = [
+  { id: 1, name: "Cole slow", price: 5, category: "Salads" },
+  { id: 2, name: "Caesar Salad", price: 20, category: "Salads" },
+  { id: 3, name: "Greek Salad", price: 12, category: "Salads" },
+  { id: 4, name: "Garden Salad", price: 15, category: "Salads" },
+  { id: 5, name: "Cobb Salad", price: 18, category: "Salads" },
+];
+export const startersItem = [
+  { id: 1, name: "Bruschetta", price: 10, category: "Starters" },
+  { id: 2, name: "Garlic Bread", price: 8, category: "Starters" },
+];
+
+export const mainCourse = [
+  { id: 1, name: "Grilled Chicken", price: 15, category: "Main Course" },
+  { id: 2, name: "Pasta Carbonara", price: 15, category: "Main Course" },
+  { id: 3, name: "Plain Rice", price: 20, category: "Main Course" },
+  { id: 4, name: "Fried Rice", price: 25, category: "Main Course" },
+  { id: 5, name: "Jollof Rice", price: 25, category: "Main Course" },
+  { id: 6, name: "Beef Burger", price: 30, category: "Main Course" },
+  { id: 7, name: "Fish and Chips", price: 35, category: "Main Course" },
+  { id: 8, name: "Banku", price: 30, category: "Main Course" },
+];
+
+export const beverages = [
+  { id: 1, name: "Lemonade", price: 15, category: "Beverages" },
+  { id: 2, name: "Iced Tea", price: 20, category: "Beverages" },
+  { id: 3, name: "Coffee", price: 25, category: "Beverages" },
+  { id: 4, name: "Smoothie", price: 30, category: "Beverages" },
+];
+
+export const soups = [
+  { id: 1, name: "Tomato Soup", price: 7, category: "Soups" },
+  { id: 2, name: "Chicken Noodle Soup", price: 9, category: "Soups" },
+  { id: 3, name: "Light Soup", price: 15, category: "Soups" },
+  { id: 4, name: "Groundnut Soup", price: 15, category: "Soups" },
+];
+
+export const desserts = [
+  { id: 1, name: "Cheesecake", price: 6, category: "Desserts" },
+  { id: 2, name: "Chocolate Mousse", price: 7, category: "Desserts" },
+  { id: 3, name: "Tiramisu", price: 8, category: "Desserts" },
+  { id: 4, name: "Ice Cream", price: 5, category: "Desserts" },
+  { id: 5, name: "Waffles", price: 10, category: "Desserts" },
+  { id: 6, name: "Pancakes", price: 10, category: "Desserts" },
+];
+
+export const pizzas = [
+  { id: 1, name: "Margherita Pizza", price: 15, category: "Pizzas" },
+  { id: 2, name: "Pepperoni Pizza", price: 18, category: "Pizzas" },
+];
+
+export const alcoholicDrinks = [
+  { id: 1, name: "Beer", price: 18, category: "Alcoholic Drinks" },
+  { id: 2, name: "Wine", price: 37, category: "Alcoholic Drinks" },
+];
+
+export const menus = [
+  { id: 1, name: "Starters", bgColor: "#b73e3e", icon: "🍲", items: startersItem },
+  { id: 2, name: "Main Course", bgColor: "#5b45b0", icon: "🍛", items: mainCourse },
+  { id: 3, name: "Beverages", bgColor: "#7f167f", icon: "🍹", items: beverages },
+  { id: 4, name: "Soups", bgColor: "#735f32", icon: "🍜", items: soups },
+  { id: 5, name: "Desserts", bgColor: "#1d2569", icon: "🍰", items: desserts },
+  { id: 6, name: "Pizzas", bgColor: "#285430", icon: "🍕", items: pizzas },
+  { id: 7, name: "Alcoholic Drinks", bgColor: "#b73e3e", icon: "🍺", items: alcoholicDrinks },
+  { id: 8, name: "Salads", bgColor: "#5b45b0", icon: "🥗", items: salads }
+]
