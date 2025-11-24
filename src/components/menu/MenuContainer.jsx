@@ -24,7 +24,8 @@ const MenuContainer = () => {
         {menus.map((menu) => (
           <div
             key={menu.id}
-            className={`p-2 bg-[${menu.bgColor}] rounded-lg cursor-pointer hover:scale-105 transition-all`}
+            className="p-2 rounded-lg cursor-pointer hover:scale-105 transition-all"
+            style={{ backgroundColor: menu.bgColor }}
             onClick={() => {
               setSelected(menu);
               setItemId(0);

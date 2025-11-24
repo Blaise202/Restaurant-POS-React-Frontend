@@ -95,6 +95,9 @@ export function Bottom() {
         <p>More</p>
       </button>
       <button
+        disabled={
+          location.pathname === "/menu" || location.pathname === "/tables"
+        }
         onClick={openModal}
         className="bg-[#F6B100] text-[#f5f5f5] rounded-full p-2 items-center absolute bottom-3"
       >
