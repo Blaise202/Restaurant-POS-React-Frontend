@@ -4,7 +4,7 @@ import Bottom from "../components/include/Bottom";
 import { MdTableRestaurant } from "react-icons/md";
 import MenuContainer from "../components/menu/MenuContainer";
 import CustomerInfo from "../components/menu/CustomerInfo";
-import OrderDetails from "../components/menu/OrderDetails";
+import CartItems from "../components/menu/CartItems";
 
 const Menu = () => {
   return (
@@ -29,10 +29,10 @@ const Menu = () => {
         </div>
         <MenuContainer />
       </div>
-      <div className="flex-[1] bg-[#1a1a1a] mt-4 mr-3 h-[780px] rounded-lg pt-2">
+      <div className="flex-[1] bg-[#1a1a1a] mt-4 mr-3 h-[500px] rounded-lg pt-2">
         <CustomerInfo />
         <hr className="border-[#2a2a2a] border-t-2 my-1" />
-        <OrderDetails />
+        <CartItems />
       </div>
       <Bottom />
     </section>
