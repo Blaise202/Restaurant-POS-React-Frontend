@@ -1,0 +1,22 @@
+import React from "react";
+
+const CustomerInfo = () => {
+  return (
+    <div className="flex items-center justify-between px-4 py-3">
+      <div className="flex flex-col items-start">
+        <h2 className="text-md text-[#f5f5f5] font-semibold tracking-wide">
+          Order Summary
+        </h2>
+        <p className="text-xs text-[#ababab] font-medium mt-1">#101/ Dine in</p>
+        <p className="text-xs text-[#ababab] font-medium mt-1">
+          November 24, 2025 04:30 AM
+        </p>
+      </div>
+      <button className="py-2 px-3 text-xl font-bold rounded-lg bg-[#f6b100]">
+        IB
+      </button>
+    </div>
+  );
+};
+
+export default CustomerInfo;
