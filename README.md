@@ -19,3 +19,7 @@
 ### install react icons
 
 > -- npm install react-icons --save
+
+### install redux
+
+> -- npm install @reduxjs/toolkit react-redux
