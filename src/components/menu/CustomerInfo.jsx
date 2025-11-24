@@ -2,7 +2,7 @@ import React from "react";
 
 const CustomerInfo = () => {
   return (
-    <div className="flex items-center justify-between px-4 py-3">
+    <div className="flex items-center justify-between px-4 py-1">
       <div className="flex flex-col items-start">
         <h2 className="text-md text-[#f5f5f5] font-semibold tracking-wide">
           Order Summary
