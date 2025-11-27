@@ -5,9 +5,12 @@ import { CiCircleMore } from "react-icons/ci";
 import { BiSolidDish } from "react-icons/bi";
 import { useLocation, useNavigate } from "react-router-dom";
 import Modal from "../include/Modal";
+import { useDispatch } from "react-redux";
+import { setCustomer } from "../../redux/slices/customerSlice";
 
 export function Bottom() {
   // const [active, setActive] = useState();
+  const dispatch = useDispatch();
   const location = useLocation();
   const [active, setActive] = useState(
     location.pathname.replace("/", "") || "home"
@@ -29,6 +32,15 @@ export function Bottom() {
   };
 
   const navigate = useNavigate();
+
+  const [name, setName] = useState();
+  const [phone, setPhone] = useState();
+  const handleCreateOrder = () => {
+    alert(`name:${name}, phone:${phone}, guests:${guestCount}`);
+    dispatch(setCustomer({ name, phone, guests: guestCount }));
+
+    navigate("/tables");
+  };
 
   return (
     <div className="fixed bottom-0 left-0 w-full right-0 bg-[#262626] p-2 h-12 flex justify-around">
@@ -115,6 +127,8 @@ export function Bottom() {
           <div className="flex items-center mt-1 rounded-lg p-3 bg-[#1f1f1f] px-4">
             <input
               type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Enter Customer Name"
               className="bg-transparent flex-1 text-white focus:outline-none"
             />
@@ -127,6 +141,8 @@ export function Bottom() {
           <div className="flex items-center mt-1 rounded-lg p-3 bg-[#1f1f1f] px-4">
             <input
               type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               placeholder="+233-00 000 0000"
               className="bg-transparent flex-1 text-white focus:outline-none"
             />
@@ -153,9 +169,7 @@ export function Bottom() {
           </div>
         </div>
         <button
-          onClick={() => {
-            navigate("/tables");
-          }}
+          onClick={handleCreateOrder}
           className="bg-[#b28207] text-white px-4 py-2 my-3 rounded-lg w-full hover:bg-[#d9a91c]"
         >
           Create Order
