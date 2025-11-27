@@ -36,7 +36,6 @@ export function Bottom() {
   const [name, setName] = useState();
   const [phone, setPhone] = useState();
   const handleCreateOrder = () => {
-    alert(`name:${name}, phone:${phone}, guests:${guestCount}`);
     dispatch(setCustomer({ name, phone, guests: guestCount }));
 
     navigate("/tables");

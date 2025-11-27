@@ -4,7 +4,8 @@ const initialState = {
   customerName: "",
   customerPhone: "",
   guests: 0,
-  tableNo: ""
+  tableNo: "",
+  orderId: "",
 };
 
 const customerSlice = createSlice({
@@ -16,6 +17,7 @@ const customerSlice = createSlice({
       state.customerName = name;
       state.customerPhone = phone;
       state.guests = guests;
+      state.orderId = `${Date.now()}`;
     },
 
     removeCustomer: (state) => {
