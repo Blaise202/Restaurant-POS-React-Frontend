@@ -6,8 +6,11 @@ import MenuContainer from "../components/menu/MenuContainer";
 import CustomerInfo from "../components/menu/CustomerInfo";
 import CartItems from "../components/menu/CartItems";
 import Bill from "../components/menu/Bill";
+import { useSelector } from "react-redux";
 
 const Menu = () => {
+  const customerData = useSelector((state) => state.customer);
+
   return (
     <section className="bg-[#1f1f1f] flex h-[calc(100vh-6.5rem)] no-scrollbar">
       <div className="flex-[3]">
@@ -22,9 +25,9 @@ const Menu = () => {
             <MdTableRestaurant className="text-[#f5f5f5] text-2xl" />
             <div className="flex flex-col items-start">
               <h2 className="text-md text-[#f5f5f5] font-semibold ">
-                Customer Name
+                {customerData.customerName}
               </h2>
-              <p className="text-xs text-[#ababab]">Table No: 2</p>
+              <p className="text-xs text-[#ababab]">{customerData.tableNo}</p>
             </div>
           </div>
         </div>
