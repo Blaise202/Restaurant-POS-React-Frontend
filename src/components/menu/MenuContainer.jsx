@@ -2,8 +2,12 @@ import React from "react";
 import { menus } from "../../constants";
 import { GrRadialSelected } from "react-icons/gr";
 import { FaShoppingCart } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/slices/cartSlice";
 
 const MenuContainer = () => {
+  const dispatch = useDispatch();
+
   const [selected, setSelected] = React.useState(menus[0]);
 
   const [itemCount, setItemCount] = React.useState(0);
@@ -17,6 +21,21 @@ const MenuContainer = () => {
     if (itemCount > 0) {
       setItemCount(itemCount - 1);
     }
+  };
+
+  const addToCart = (item) => {
+    if (itemCount == 0) return;
+    const { name, price } = item;
+    const newObject = {
+      id: new Date(),
+      name,
+      pricePerQuantity: price,
+      quantity: itemCount,
+      price: price * itemCount,
+    };
+
+    dispatch(addItem(newObject));
+    setItemCount(0);
   };
   return (
     <>
@@ -57,7 +76,10 @@ const MenuContainer = () => {
               <h2 className="text-[#f5f5f5]  text-md font-semibold">
                 {item.name}
               </h2>
-              <button className="bg-[#2e4a40] rounded-md p-1">
+              <button
+                onClick={() => addToCart(item)}
+                className="bg-[#2e4a40] rounded-md p-1"
+              >
                 <FaShoppingCart className="text-[#02ca3a] cursor-pointer " />
               </button>
             </div>
