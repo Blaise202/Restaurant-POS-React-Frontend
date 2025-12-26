@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const Register = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    role: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
+
+  const handleRoleChange = (selected) => {
+    setFormData({ ...formData, role: selected });
+  };
+
   return (
     <form
-      action="#"
-      method="post"
+      onSubmit={handleSubmit}
       className="p-3 w-[90%] my-2 rounded-lg justify-center text-xs"
     >
       <div className="text-[#f5f5f5] block">
@@ -16,9 +36,12 @@ export const Register = () => {
         </label>
         <input
           type="text"
+          value={formData.name}
+          onChange={handleChange}
           className="w-full block bg-[#161616] p-3 mt-1 rounded-lg"
           id="name"
           name="name"
+          required
           placeholder="Enter employee name"
         />
       </div>
@@ -31,9 +54,12 @@ export const Register = () => {
         </label>
         <input
           type="email"
+          value={formData.email}
+          onChange={handleChange}
           className="w-full block mt-2 bg-[#161616] p-3 rounded-lg"
           id="email"
           name="email"
+          required
           placeholder="Enter employee email"
         />
       </div>
@@ -46,6 +72,9 @@ export const Register = () => {
         </label>
         <input
           type="tel"
+          required
+          value={formData.phone}
+          onChange={handleChange}
           className="w-full block bg-[#161616] p-3 rounded-lg"
           id="phone"
           name="phone"
@@ -61,10 +90,13 @@ export const Register = () => {
         </label>
         <input
           type="password"
+          required
           className="w-full block mt-2 bg-[#161616] p-3 rounded-lg"
           id="password"
           placeholder="••••••••••••"
           name="password"
+          value={formData.password}
+          onChange={handleChange}
         />
       </div>
       <div className="mt-2">
@@ -78,7 +110,11 @@ export const Register = () => {
           {["Waiter", "Cashier", "Admin"].map((role) => (
             <button
               key={role}
-              className="w-1/3 text-sm font-bold bg-[#161616] px-2 py-3 rounded-lg mt-2 text-[#a5a5a5]"
+              type="button"
+              onClick={() => handleRoleChange(role)}
+              className={`w-1/3 text-sm font-bold bg-[#161616] px-2 py-3 rounded-lg mt-2 text-[#a5a5a5] ${
+                formData.role === role ? "bg-yellow-200 text-black" : ""
+              } `}
             >
               {role}
             </button>
