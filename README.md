@@ -23,3 +23,7 @@
 ### install redux
 
 > -- npm install @reduxjs/toolkit react-redux
+
+### Install tanstack `for easy data fetching`
+
+> -- npm i @tanstack/react-query
