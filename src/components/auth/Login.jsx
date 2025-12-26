@@ -4,9 +4,11 @@ import { login } from "../../https";
 import { enqueueSnackbar } from "notistack";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/slices/userSlice";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -29,6 +31,7 @@ export const Login = () => {
       console.log(data);
       const { _id, name, email, phone, role } = data.data;
       dispatch(setUser({ _id, name, email, phone, role }));
+      navigate("/");
     },
     onError: (error) => {
       const { response } = error;
