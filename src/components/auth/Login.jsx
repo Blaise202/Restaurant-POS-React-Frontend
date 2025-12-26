@@ -1,4 +1,7 @@
+import { useMutation } from "@tanstack/react-query";
 import React, { useState } from "react";
+import { login } from "../../https";
+import { enqueueSnackbar } from "notistack";
 
 export const Login = () => {
   const [formData, setFormData] = useState({
@@ -12,8 +15,20 @@ export const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    loginMutation.mutate(formData);
   };
+
+  const loginMutation = useMutation({
+    mutationFn: (reqData) => login(reqData),
+    onSuccess: (res) => {
+      const { data } = res;
+      console.log(data);
+    },
+    onError: (error) => {
+      const { response } = error;
+      enqueueSnackbar(response.data.message, { variant: "error" });
+    },
+  });
 
   return (
     <form
