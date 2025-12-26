@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import bgImage from "../assets/images/rest.jpg";
 import logo from "../assets/logo/a_z.png";
 import Register from "../components/auth/Register.jsx";
+import Login from "../components/auth/Login.jsx";
 
 const Auth = () => {
+  const [isRegistering, setIsRegistering] = useState(false);
+
   return (
     <>
       <div className="flex min-h-screen w-full">
@@ -40,7 +43,26 @@ const Auth = () => {
               A_Z Restaurant POS
             </span>
           </div>
-          <Register />
+
+          <h1 className="text-xl text-yellow-500 font-bold font-mono">
+            {isRegistering ? "Employee Registration" : "Employee Login"}
+          </h1>
+
+          {isRegistering ? <Register /> : <Login />}
+
+          <div className="text-center">
+            <p className="text-sm text-[#a5a5a5]">
+              {isRegistering
+                ? "Already have an account?"
+                : "Don't have an account?"}{" "}
+              <button
+                onClick={() => setIsRegistering(!isRegistering)}
+                className="text-yellow-500 underline"
+              >
+                {isRegistering ? "Login" : "Sign Up"}
+              </button>
+            </p>
+          </div>
         </div>
       </div>
     </>
