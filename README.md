@@ -31,3 +31,7 @@
 ### Install notistack `notifications`
 
 > -- npm i notistack
+
+### Install axios `for calling APIs`
+
+> -- npm i axios
