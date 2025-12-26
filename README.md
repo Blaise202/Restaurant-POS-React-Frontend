@@ -27,3 +27,7 @@
 ### Install tanstack `for easy data fetching`
 
 > -- npm i @tanstack/react-query
+
+### Install notistack `notifications`
+
+> -- npm i notistack
